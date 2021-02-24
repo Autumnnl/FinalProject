@@ -38,7 +38,7 @@ namespace Business.Concrete
         {
             #region BusinessRules
             IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
-                CheckIfProductCaountOfCategoryCorrect(product.CategoryId));
+                CheckIfProductCaountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceeded());
             if (result != null)
             {
                 return result;
@@ -106,7 +106,7 @@ namespace Business.Concrete
             return new SuccessResult();
 
         }
-        private IResult ChechIfCategoryLimitExceeded()
+        private IResult CheckIfCategoryLimitExceeded()
         {
             var result = _categoryService.GetAll();
             if (result.Data.Count>15)
