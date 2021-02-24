@@ -5,6 +5,8 @@ using System;
 
 namespace ConsoleUI
 {//SOLİD
+    
+
     //Open Closed Principle //Data Transformatoin Object
     class Program
     {
