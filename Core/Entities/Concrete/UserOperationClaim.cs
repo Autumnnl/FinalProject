@@ -2,6 +2,8 @@
 {
     public class UserOperationClaim:IEntity
     {
+        public object OperationClaimId;
+
         public int Id { get; set; }
         public int UserId { get; set; }
         public int OperationId { get; set; }
